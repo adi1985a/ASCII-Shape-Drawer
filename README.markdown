@@ -41,9 +41,7 @@ Every operation is time-stamped in an `app.log` file.
 ---
 
 ## 🖼️ Screenshots
-> *Conceptual rendering* — real console colours depend on your terminal.
 
-```
 **Example Console Output:**
 <p align="center">
   <img src="screenshots\1.jpg" width="300"/>
@@ -55,6 +53,11 @@ Every operation is time-stamped in an `app.log` file.
   <img src="screenshots\7.jpg" width="300"/>
   <img src="screenshots\8.jpg" width="300"/>
 </p>
+
+> *Conceptual rendering* — real console colours depend on your terminal.
+
+```
+
 
 ========================================================
  *  Adrian Lesniak  Shape Drawer ASCII Console  *
