@@ -1,51 +1,49 @@
-# 📏🎨 RectangleClass Demo: C++ Object-Oriented Design 🖼️
-_A C++ console program demonstrating a `Rectangle` class with multiple constructors, property management (sides, color, area), and a display method._
+# 📏🎨 **Shape Drawer ASCII Console**: Modern C++ OOP Demo 🖼️  
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![C++](https://img.shields.io/badge/Language-C%2B%2B-blue.svg)](https://isocpp.org/)
-[![Platform: Cross-platform](https://img.shields.io/badge/Platform-Cross--platform-lightgrey.svg)]()
+<img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg">
+<img alt="C++" src="https://img.shields.io/badge/Language-C++-blue.svg">
+<img alt="Platform: Cross-platform" src="https://img.shields.io/badge/Platform-Cross--platform-lightgrey.svg">
 
 ## 📋 Table of Contents
-1.  [Overview](#-overview)
-2.  [Key Features of the `Rectangle` Class](#-key-features-of-the-rectangle-class)
-3.  [Screenshots (Conceptual Output)](#-screenshots-conceptual-output)
-4.  [System Requirements](#-system-requirements)
-5.  [Installation and Setup](#️-installation-and-setup)
-6.  [Usage Guide](#️-usage-guide)
-7.  [File Structure](#-file-structure)
-8.  [Technical Notes](#-technical-notes)
-9.  [Contributing](#-contributing)
-10. [License](#-license)
-11. [Contact](#-contact)
+1. [Overview](#-overview)  
+2. [Key Features](#-key-features)  
+3. [Demo Screens](#-screenshots)  
+4. [System Requirements](#️-system-requirements)  
+5. [Installation & Setup](#-installation-and-setup)  
+6. [Usage Guide](#-usage-guide)  
+7. [File Structure](#-file-structure)  
+8. [Technical Notes](#-technical-notes)  
+9. [Contributing](#-contributing)  
+10. [License](#-license)  
+11. [Contact](#-contact)  
+
+---
 
 ## 📄 Overview
-
-The **RectangleClass Demo**, developed by Adrian Lesniak, is a C++ console application designed to illustrate fundamental object-oriented programming (OOP) concepts through the implementation of a `Rectangle` class. This class manages properties of a rectangle, including its side lengths (`sideA`, `sideB`), its `color` (as a string), and its calculated `area`. The program showcases the use of default and overloaded constructors for flexible object initialization. A `show()` method is provided to display the rectangle's details. The `main` function demonstrates the creation of an array of `Rectangle` objects, initialized using different constructors, and then iterates through them to display their properties.
+**Shape Drawer**, created by **Adrian Leśniak**, is a cross-platform C++ console application that demonstrates object-oriented design, RAII, the Factory pattern and ANSI-colour terminal output.  
+The program lets you draw colourful ASCII **circles**, **squares** and **triangles**, review the current session, and save / load shape lists from a text file.  
+Every operation is time-stamped in an `app.log` file.
 
 ![Demo GIF](screenshots/1.gif)
 
-## ✨ Key Features of the `Rectangle` Class
+---
 
-*   📦 **Attributes (Private)**:
-    *   `sideA`, `sideB`: Integer values representing the lengths of the rectangle's sides.
-    *   `color`: A `std::string` storing the color of the rectangle (e.g., "black", "blue", "yellow").
-    *   `area`: A `float` storing the calculated surface area of the rectangle.
-*   🛠️ **Constructors**:
-    *   **Default Constructor**: Initializes a rectangle with default values (e.g., sides 0, color "black", area 0).
-    *   **Overloaded Constructor (Sides and Color)**: Initializes a rectangle with specified side lengths and color. Calculates area internally.
-    *   **Overloaded Constructor (Sides Only)**: Initializes a rectangle with specified side lengths and a default color (e.g., "yellow"). Calculates area internally.
-*   📊 **Methods**:
-    *   `show()`: A public method that prints the rectangle's side lengths, color, and calculated area to the console in a formatted way (using English text).
-    *   `calculateArea()`: A private helper method that computes the area (`sideA * sideB`, cast to `float`) and stores it in the `area` attribute. This is typically called by the constructors.
-*   👨‍💻 **Demonstration in `main()`**:
-    *   Creates a fixed-size array (e.g., of four `Rectangle` objects).
-    *   Initializes these objects using the various constructors to demonstrate their usage and flexibility.
-    *   Iterates through the array, calling the `show()` method for each `Rectangle` object to display its properties.
+## ✨ Key Features
+| Category | Details |
+|----------|---------|
+| 🎨 **ASCII Art** | Clearly aligned shapes with bright ANSI colours (works on Windows 10+ & POSIX). |
+| 🏗️ **OOP Design** | Abstract base class `Shape`, concrete subclasses `Circle`, `Square`, `Triangle`, and a factory helper. |
+| 💾 **Persistence** | Save / load shape sequences to `shapes.txt`. |
+| 📝 **Logging** | `Logger` writes time-stamped events to `app.log`. |
+| ⚙️ **Exception Safety** | Robust try/catch around I/O and menu actions. |
+| 🌐 **Cross-platform** | Builds with GCC/Clang/MSVC; enables virtual-terminal colours on Windows automatically. |
 
-## 🖼️ Screenshots 
+---
 
-The program produces direct console output based on the `show()` method.
+## 🖼️ Screenshots
+> *Conceptual rendering* — real console colours depend on your terminal.
 
+```
 **Example Console Output:**
 <p align="center">
   <img src="screenshots\1.jpg" width="300"/>
@@ -58,12 +56,12 @@ The program produces direct console output based on the `show()` method.
   <img src="screenshots\8.jpg" width="300"/>
 </p>
 
+========================================================
+ *  Adrian Lesniak  Shape Drawer ASCII Console  *
+========================================================
+ Draw colourful ASCII shapes, store them, load them, 
+ and enjoy a simple, cross-platform CLI demo.        
 
-*(The exact formatting and English phrases will depend on the `show()` method's implementation.)*
-
-## Example Output
-
-```
 ******************* MENU *******************
  1  Draw a new figure
  2  Show figures drawn in this session
@@ -83,94 +81,109 @@ Choose figure (1-Circle, 2-Square, 3-Triangle): 2
 Press <Enter> to return to menu...
 ```
 
-## ⚙️ System Requirements
+**Example: Drawing a triangle**
+```
+      /\
+     /  \
+    /____\
+```
 
-*   **Operating System**: Any OS supporting a standard C++ compiler (e.g., Windows, Linux, macOS).
-*   **C++ Compiler**: A C++ compiler (e.g., g++, clang++, MSVC). C++11 or later is good practice.
-*   **Standard C++ Libraries**: `<iostream>` (for console I/O), `<string>` (for color attribute), `<vector>` (if the array of rectangles were dynamic, though the example implies a fixed-size C-style array or `std::array`).
+**Example: No shapes yet**
+```
+No shapes yet.
+```
+
+---
+
+## ⚙️ System Requirements
+| Component | Minimum |
+|-----------|---------|
+| OS | Windows 10+, Linux, macOS |
+| Compiler | C++11-enabled (GCC, Clang, MSVC) |
+| Libraries | Standard C++ only (no external deps) |
+
+---
 
 ## 🛠️ Installation and Setup
+```bash
+# Clone repository
+git clone <repository-url>
+cd <repository-directory>
 
-1.  **Clone the Repository (if applicable)**:
-    ```bash
-    git clone <repository-url>
-    cd <repository-directory>
-    ```
-    *(Replace `<repository-url>` and `<repository-directory>` if this code is part of a larger repository).*
+# Build (GCC/Clang)
+g++ -std=c++11 -O2 -o shape_drawer main.cpp
+#   Windows + MinGW: add -static-libgcc -static-libstdc++
 
-2.  **Save Main Code**:
-    Ensure your C++ source code (containing the `Rectangle` class definition and implementation, and the `main` function) is saved as `rectangle.cpp` (or your chosen file name) in your project directory.
+# Run
+./shape_drawer        # Linux/macOS
+shape_drawer.exe      # Windows
+```
 
-3.  **Compile the Program**:
-    Open a terminal (Command Prompt, PowerShell, Bash, etc.) in the project directory.
-    **Example using g++:**
-    ```bash
-    g++ rectangle.cpp -o rectangle -std=c++11
-    ```
-    *(Add `-static-libgcc -static-libstdc++` on Windows with MinGW if desired for standalone executables. Add optimization flags like `-O2` for release builds if needed).*
-
-4.  **Run the Program**:
-    *   On Windows: `.\rectangle.exe` or `rectangle.exe`
-    *   On Linux/macOS: `./rectangle` (ensure execute permissions: `chmod +x rectangle`)
+---
 
 ## 💡 Usage Guide
 
-1.  Compile `rectangle.cpp` as detailed in the "Installation and Setup" section.
-2.  Run the compiled executable (`rectangle` or `rectangle.exe`).
-3.  **Output**:
-    *   The program will directly print the details for each of the four `Rectangle` objects created and initialized in the `main` function. This includes their side lengths, color, and calculated area.
-4.  **Actions**:
-    *   Observe the console output to verify the properties of each rectangle, confirming that the different constructors work as expected.
-    *   The program runs a fixed sequence (creating and displaying rectangles) and then terminates. There are no interactive prompts for the user.
-    *   To experiment, you can modify the parameters used when initializing the `Rectangle` objects in the `main` function's array and recompile.
+1. Run the executable.
+2. Use the menu to:
+   - Draw a new figure (circle, square, triangle)
+   - Show all figures drawn in this session
+   - Save figures to `shapes.txt`
+   - Load figures from `shapes.txt`
+   - Exit with option 5
+3. Press Enter after each action to return to the menu.
+4. All actions are logged to `app.log`.
+
+---
 
 ## 🗂️ File Structure
 
-*   `rectangle.cpp`: The main (and likely only) C++ source file containing the `Rectangle` class definition and implementation, and the `main()` demonstration function.
-*   `README.md`: This documentation file.
+```
+├─ main.cpp                # Main source (this repo)
+├─ README.md               # You are here
+├─ app.log                 # Generated at runtime
+├─ shapes.txt              # Optional save-file
+└─ screenshots/            # Demo images (optional)
+```
 
-*(No external data files, log files, or user-provided header files are indicated for this specific program as described.)*
+---
 
 ## 📝 Technical Notes
 
-*   **Encapsulation**: The `Rectangle` class demonstrates encapsulation by keeping its attributes (`sideA`, `sideB`, `color`, `area`) private and providing public methods (constructors, `show()`) to interact with and display object data. The `calculateArea()` method is private as it's an internal utility.
-*   **Constructors**: The use of a default constructor and multiple overloaded constructors allows for flexible object creation.
-*   **Area Calculation**: The area is calculated as `sideA * sideB`. The description notes it's cast to `float` for precision, which is good practice if `sideA` and `sideB` are integers but a floating-point area is desired.
-*   **Output Language**: The program uses English text (e.g., "Side lengths", "Color", "Area") in its `show()` method for clarity.
-*   **No Locale Settings**: Standard ASCII characters are used for colors (e.g., "blue", "yellow", "black", "green" as strings), so no special locale settings are required for text display.
-*   **Fixed Demonstration**: The `main` function demonstrates a fixed set of rectangle creations. There is no user input to define rectangles at runtime.
-*   **Potential Enhancements**:
-    *   Adding setter methods (mutators) to modify rectangle properties after creation.
-    *   Implementing a `getPerimeter()` method.
-    *   Adding input validation if user-defined rectangles were to be implemented.
-    *   Using `const` correctness for methods like `show()` and potentially getters.
+- **Colours** – Bright ANSI sequences (\033[9xm]) avoid dark text on dark backgrounds.
+- **Windows Support** – ENABLE_VIRTUAL_TERMINAL_PROCESSING flag is set at runtime; a fallback macro is defined for older MinGW headers.
+- **Memory Management** – All Shape objects are handled via std::unique_ptr, ensuring automatic cleanup.
+- **Pattern Usage** – Factory Method creates shapes from simple menu keys.
+- **Extensibility** – Add new shapes by inheriting from Shape and extending the factory.
+
+---
 
 ## 🤝 Contributing
 
-Contributions to this **RectangleClass Demo** are welcome, especially if they aim to:
+1. Fork the repo.
+2. Create a feature branch  
+   `git checkout -b feature/NewShape`
+3. Commit your changes with clear messages.
+4. Push and open a Pull Request.
 
-*   Add more methods to the `Rectangle` class (e.g., `getPerimeter()`, `isSquare()`).
-*   Implement comparison operators (e.g., to compare areas of rectangles).
-*   Introduce user input for creating rectangles dynamically.
-*   Showcase inheritance by creating specialized rectangle types.
+Please follow modern C++ best practices and keep code well-commented.
 
-1.  Fork the repository.
-2.  Create a new branch for your feature (`git checkout -b feature/RectangleEnhancements`).
-3.  Make your changes and commit them (`git commit -m 'Feature: Add perimeter calculation'`).
-4.  Push to the branch (`git push origin feature/RectangleEnhancements`).
-5.  Open a Pull Request.
-
-Please ensure your code is well-commented and adheres to good C++ OOP practices.
+---
 
 ## 📃 License
 
-This project is licensed under the **MIT License**.
-(If you have a `LICENSE` file in your repository, refer to it: `See the LICENSE file for details.`)
+Licensed under the MIT License — see LICENSE for details.
+
+---
 
 ## 📧 Contact
 
-Created by **Adrian Lesniak**.
-For questions, feedback, or issues related to this OOP demonstration, please open an issue on the GitHub repository or contact the repository owner.
+Created with ❤️ by Adrian Leśniak.  
+For questions or feedback, open an issue or reach out via the repository page.
 
 ---
-🖼️ _Illustrating C++ class design and object creation with simple rectangles!_
+
+🖼️ Bringing geometry to life in vibrant ASCII!
+
+
+
+
