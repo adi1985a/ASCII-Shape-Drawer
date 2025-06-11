@@ -22,6 +22,8 @@ _A C++ console program demonstrating a `Rectangle` class with multiple construct
 
 The **RectangleClass Demo**, developed by Adrian Lesniak, is a C++ console application designed to illustrate fundamental object-oriented programming (OOP) concepts through the implementation of a `Rectangle` class. This class manages properties of a rectangle, including its side lengths (`sideA`, `sideB`), its `color` (as a string), and its calculated `area`. The program showcases the use of default and overloaded constructors for flexible object initialization. A `show()` method is provided to display the rectangle's details. The `main` function demonstrates the creation of an array of `Rectangle` objects, initialized using different constructors, and then iterates through them to display their properties.
 
+![Demo GIF](screenshots/1.gif)
+
 ## ✨ Key Features of the `Rectangle` Class
 
 *   📦 **Attributes (Private)**:
@@ -40,27 +42,22 @@ The **RectangleClass Demo**, developed by Adrian Lesniak, is a C++ console appli
     *   Initializes these objects using the various constructors to demonstrate their usage and flexibility.
     *   Iterates through the array, calling the `show()` method for each `Rectangle` object to display its properties.
 
-## 🖼️ Screenshots (Conceptual Output)
+## 🖼️ Screenshots 
 
 The program produces direct console output based on the `show()` method.
 
 **Example Console Output:**
-*--- Rectangle #1 ---
-Side lengths: 0 x 0
-Color: black
-Area: 0.00
---- Rectangle #2 ---
-Side lengths: 5 x 7
-Color: blue
-Area: 35.00
---- Rectangle #3 ---
-Side lengths: 3 x 10
-Color: green
-Area: 30.00
---- Rectangle #4 ---
-Side lengths: 8 x 8
-Color: yellow
-Area: 64.00*
+<p align="center">
+  <img src="screenshots\1.jpg" width="300"/>
+  <img src="screenshots\2.jpg" width="300"/>
+  <img src="screenshots\3.jpg" width="300"/>
+  <img src="screenshots\4.jpg" width="300"/>
+  <img src="screenshots\5.jpg" width="300"/>
+  <img src="screenshots\6.jpg" width="300"/>
+  <img src="screenshots\7.jpg" width="300"/>
+  <img src="screenshots\8.jpg" width="300"/>
+</p>
+
 
 *(The exact formatting and English phrases will depend on the `show()` method's implementation.)*
 
