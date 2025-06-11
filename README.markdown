@@ -61,6 +61,28 @@ The program produces direct console output based on the `show()` method.
 
 *(The exact formatting and English phrases will depend on the `show()` method's implementation.)*
 
+## Example Output
+
+```
+******************* MENU *******************
+ 1  Draw a new figure
+ 2  Show figures drawn in this session
+ 3  Save figures to file
+ 4  Load figures from file
+ 5  Exit
+*********************************************
+Choose an option > 1
+
+Choose figure (1-Circle, 2-Square, 3-Triangle): 2
+  ________
+ |        |
+ |        |
+ |        |
+ |________|
+
+Press <Enter> to return to menu...
+```
+
 ## ⚙️ System Requirements
 
 *   **Operating System**: Any OS supporting a standard C++ compiler (e.g., Windows, Linux, macOS).
